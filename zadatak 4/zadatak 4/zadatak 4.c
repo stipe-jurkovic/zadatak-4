@@ -107,12 +107,10 @@ Position EndOfList(Position P) {
 	}
 	return P;
 }
-Position PrevEl(Position P, Member O) {
+Position PrevEl(Position P, Member M) {
 
 
-	while (P->Next != NULL && P->Next->Member.exponent != O.exponent
-		&& strcmp(P->Next->Member.name, O.name) != 0
-		&& strcmp(P->Next->Member.lastname, O.lastname) != 0)
+	while (P->Next != NULL && P->Next->Member.coefficient != M.coefficient && P->Next->Member.exponent != M.exponent)
 	{
 		P = P->Next;
 	}
